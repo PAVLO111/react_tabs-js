@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { useState } from 'react';
 import { Tabs } from './components/Tabs/index';
 
 export const tabs = [
@@ -20,7 +19,11 @@ export const App = () => {
 
       <div data-cy="TabsComponent">
         <div className="tabs is-boxed">
-          <Tabs tabs={tabs} activeTabId={activeTabId} />
+          <Tabs
+            tabs={tabs}
+            activeTabId={activeTabId}
+            selectedTab={setActiveTabId}
+          />
         </div>
 
         <div className="block" data-cy="TabContent">

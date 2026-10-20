@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { Tab } from './Tab';
 
-export const Tabs = ({ tabs, activeTabId }) => (
+export const Tabs = ({ tabs, activeTabId, setActiveTabId }) => (
   <ul>
     {tabs.map(tab => (
       <Tab
