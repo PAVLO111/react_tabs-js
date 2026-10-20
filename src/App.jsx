@@ -2,6 +2,7 @@ import React from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
+import { useState } from 'react';
 import { Tabs } from './components/Tabs/index';
 
 export const tabs = [
@@ -10,18 +11,22 @@ export const tabs = [
   { id: 'tab-3', title: 'Tab 3', content: 'Some text 3' },
 ];
 
-export const App = () => (
-  <div className="section">
-    <h1 className="title">Selected tab is Tab 1</h1>
+export const App = () => {
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
 
-    <div data-cy="TabsComponent">
-      <div className="tabs is-boxed">
-          <Tabs tabs={tabs} />
-      </div>
+  return (
+    <div className="section">
+      <h1 className="title">Selected tab is Tab 1</h1>
 
-      <div className="block" data-cy="TabContent">
-        Some text 1
+      <div data-cy="TabsComponent">
+        <div className="tabs is-boxed">
+          <Tabs tabs={tabs} activeTabId={activeTabId} />
+        </div>
+
+        <div className="block" data-cy="TabContent">
+          Some text 1
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
