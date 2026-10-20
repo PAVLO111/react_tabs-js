@@ -17,9 +17,7 @@ export const App = () => {
 
   return (
     <div className="section">
-      <h1 className="title">
-        {`Selected tab is tab-${activeTab.title ? activeTabId : ''}`}
-      </h1>
+      <h1 className="title">{`Selected tab is ${activeTab.title}`}</h1>
 
       <Tabs
         tabs={tabs}
